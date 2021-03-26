@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url(images/bgc.jpg);
+        }
+        section{
+            width: 200px;
+            height: 200px;
+            perspective: 5000px;
+            margin: 100px auto;
+            transition: all 10s linear 0s;
+
+        }
+       
+        section:hover .lft{
+            transform: rotateX(360deg) rotateY(360deg);
+            
+            
+        }
+        
+        .lft{
+             width: 200px;
+             height: 200px;
+             position: relative;
+             perspective: 5000px;
+             transition: transform 2s linear 0s;
+             transform-style: preserve-3d;
+             animation: lft 10s linear 0s infinite;
+            }
+            @keyframes lft{
+            from{
+                transform: rotateX(0) rotateY(0);
+            }
+            to{
+                transform:rotateX(360deg) rotateY(360deg);
+            }
+        }
+            p{
+                width: 200px;
+                height: 200px;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+            }
+            .lft p:nth-child(1){
+                /* 前面 */
+                transform: translateZ(100px);
+                background-color: rgba(192, 25, 75, 0.363);
+                
+            }
+            .lft p:nth-child(2){
+                /* 上面 */
+                background-color: rgba(112, 241, 26, 0.363);
+                transform: rotateX(90deg) translateZ(100px);
+            }
+            .lft p:nth-child(3){
+                /* 后面 */
+                background-color: rgba(26, 241, 26, 0.452);
+                transform: rotateX(180deg) translateZ(100px);
+            }
+            .lft p:nth-child(4){
+                /* 下面 */
+                background-color: rgba(20, 10, 156, 0.397);
+                transform: rotateX(-90deg) translateZ(100px);
+            }
+            .lft p:nth-child(5){
+                /* 右边 */
+                background-color: rgba(168, 39, 136, 0.363);
+                transform: rotateY(90deg) translateZ(100px);
+            }
+            .lft p:nth-child(6){
+                /* 左边 */
+                background-color: rgba(26, 180, 241, 0.363);
+                transform: rotateY(-90deg) translateZ(100px);
+                
+            }
+    </style>
+  
+</head>
+<body>
+    <section>
+        <div class="lft">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </section>
+    
+</body>
+</html>
